@@ -2,6 +2,7 @@ package unibo.naiveactors24.example;
 import unibo.basicomm23.msg.ProtocolType;
 import unibo.basicomm23.utils.CommUtils;
 import unibo.naiveactors24.ActorContext24;
+import unibo.naiveactors24.obslogger;
  
 
 public class MainExampleNaiveActors24 {
@@ -18,8 +19,9 @@ public class MainExampleNaiveActors24 {
         ActorContext24 ctx1 = new ActorContext24("ctx1", "localhost", port1);
         CommUtils.outblue("MainExampleTowardsActors24 CREA GLI ATTORI ");
 
-        Actor24Sender a1   = new Actor24Sender("a1",ctx1);
-        Actor24Receiver a2 = new Actor24Receiver("a2",ctx1);
+        Actor24Sender a1   = new Actor24Sender("produttore",ctx1);
+        Actor24Receiver a2 = new Actor24Receiver("consumatore",ctx1);
+        obslogger o= new obslogger("obslogger", ctx1);
 
         ctx1.showActorNames();
         
@@ -29,8 +31,10 @@ public class MainExampleNaiveActors24 {
         alienCaller();
         
         CommUtils.outblue("PROVO UPDATE ");
-        a1.addObserver(a2.getName());
-        a1.updateResources("prova");
+        a1.addObserver(o.getName());
+        a2.addObserver(o.getName());
+        a1.updateResources("bo");
+        a2.updateResources("prova1");
     }
     public static void main(String[] args ){
         new MainExampleNaiveActors24().configureTheSystem();
