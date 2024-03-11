@@ -1,0 +1,3 @@
+msg(update,dispatch,produttore,obslogger,prova,5)
+msg(update,dispatch,consumatore,obslogger,prova1,6)msg(update,dispatch,produttore,obslogger,prova,5)
+msg(update,dispatch,consumatore,obslogger,prova1,6)
