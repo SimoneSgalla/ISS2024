@@ -1,0 +1,3 @@
+msg(distance,dispatch,simonesgalla,consumer,distance(30),0)
+msg(distance,dispatch,simonesgalla,consumer,distance(30),0)
+msg(distance,dispatch,simonesgalla,consumer,distance(10),1)
